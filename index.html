@@ -8,6 +8,7 @@
     <script type="text/javascript" src="src/algorithms/insertion_sort.js"></script>
     <script type="text/javascript" src="src/algorithms/merge_sort.js"></script>
     <script type="text/javascript" src="src/algorithms/bubble_sort.js"></script>
+    <script type="text/javascript" src="src/algorithms/selection_sort.js"></script>
 </head>
 <body>
     <div id="source_data"></div>
@@ -41,6 +42,18 @@
         <p id="spent_time_bubble_sort">Time spent : </p>
         <p id="sorted_result_bubble_sort"></p>
     </div>
+
+
+    <div id="selection_sort">
+        <h1>Selection Sort</h1>
+        <p class="description"></p>
+        <p class="explanation">Looks for the smallest element and swap it</p>
+        <p class="time_formula">O(n&sup2;) - begins from the end of a list, Compares two adjacent elements</p>
+        <p class="type">Algorithm of unstable sorting</p>
+        <p id="spent_time_selection_sort">Time spent : </p>
+        <p id="sorted_result_selection_sort"></p>
+    </div>
+
     <script type="text/javascript" src="./src/main.js"></script>
 </body>
 </html>

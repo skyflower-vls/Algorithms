@@ -3,6 +3,24 @@
  */
 
 function MergeSort() {
+    /**  @param {Array.<Number>}
+     *   @type {Object}
+     *   @property {Array.<Number>}
+     *   @property {Number}
+     * **/
+    var algorithm = function (dataArray) {
+        var sortedArray = dataArray.slice(0); // clone
+
+        var startedTime = new Date().getTime();
+
+        var result = divideArray(sortedArray);
+
+        var finishTime = new Date().getTime();
+        var timeSpent = finishTime - startedTime;
+
+        return {sortedData: result, timeSpent: timeSpent};
+    };
+
     /**  @param {Array.<Number>} **/
     function divideArray(array) {
         if (array.length < 2)  return array; // one element has been already sorted
@@ -55,16 +73,7 @@ function MergeSort() {
          *   @property {Number}
          * **/
         execute: function (dataArray) {
-            var sortedArray = dataArray.slice(0); // clone
-
-            var startedTime = new Date().getTime();
-
-            var result = divideArray(sortedArray);
-
-            var finishTime = new Date().getTime();
-            var timeSpent = finishTime - startedTime;
-
-            return {sortedData: result, timeSpent: timeSpent};
+            return algorithm(dataArray);
         },
 
         /**

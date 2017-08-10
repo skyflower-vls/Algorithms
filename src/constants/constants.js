@@ -2,7 +2,7 @@
  * Created by viurchuk on 8/10/2017.
  */
 
-var MAX_SIZE     = 800;
+var MAX_SIZE     = 500;
 var MAX_RANGE    = 100;
 
 var AlgorithmNamesConst = {
@@ -23,5 +23,10 @@ var ElementIdConst = {
     BubbleSort : {
         SPENT_TIME      : "spent_time_bubble_sort",
         SORTED_RESULT   : "sorted_result_bubble_sort"
+    },
+    SelectionSort : {
+        SPENT_TIME      : "spent_time_selection_sort",
+        SORTED_RESULT   : "sorted_result_selection_sort"
     }
+
 };

@@ -2,7 +2,7 @@
  * Created by viurchuk on 8/10/2017.
  */
 
-var InsertionSort = function () {
+var SelectionSort = function (dataArray) {
     /**  @param {Array.<Number>}
      *   @type {Object}
      *   @property {Array.<Number>}
@@ -13,17 +13,23 @@ var InsertionSort = function () {
 
         var startedTime = new Date().getTime();
 
-        for (var i = 1; i < sortedArray.length; i++) {
-            var key = sortedArray[i]; // second element
-            var j = i - 1;             // previous element
+        for (var i = 0; i<sortedArray.length; i++) {
+            var minValueIndex = i;
 
-            while (j >= 0 && key < sortedArray[j]) {
-                sortedArray[j + 1] = sortedArray[j]; // second = first
-                j = j - 1;                          // next element
+            for (var j=minValueIndex; j<sortedArray.length; j++) {
+                if (sortedArray[minValueIndex] > sortedArray[j]) {
+                    minValueIndex = j;
+                }
             }
 
-            sortedArray[j + 1] = key;  // j = -1  first = second, if while == false -> current_element = current_element
+            if (minValueIndex != i) {
+                var tmp = sortedArray[i];
+                sortedArray[i] = sortedArray[minValueIndex];
+                sortedArray[minValueIndex] = tmp;
+            }
         }
+
+
         var finishTime = new Date().getTime();
         var timeSpent = finishTime - startedTime;
 
@@ -47,9 +53,10 @@ var InsertionSort = function () {
          */
         writeResult: function (dataObject) {
             var text = dataObject.timeSpent.toString();
-            addTextToElementId(text, ElementIdConst.InsertionSort.SPENT_TIME);
-            printArrayToNode(dataObject.sortedData, ElementIdConst.InsertionSort.SORTED_RESULT)
+            addTextToElementId(text, ElementIdConst.SelectionSort.SPENT_TIME);
+            printArrayToNode(dataObject.sortedData, ElementIdConst.SelectionSort.SORTED_RESULT)
         }
+
     }
 };
 
