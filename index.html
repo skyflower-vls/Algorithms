@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithms</title>
+    <script type="text/javascript" src="src/constants/constants.js"></script>
+    <script type="text/javascript" src="src/utils/utils.js"></script>
+    <script type="text/javascript" src="src/algorithms/insertion_sort.js"></script>
+    <script type="text/javascript" src="src/algorithms/merge_sort.js"></script>
+    <script type="text/javascript" src="src/algorithms/bubble_sort.js"></script>
+</head>
+<body>
+    <div id="source_data"></div>
+
+    <div id="insertion_sort">
+        <h1>Insertion Sort</h1>
+        <p class="description">Efficient for small amount of elements</p>
+        <p class="explanation">Element compare with all previous elements and inserted at the proper position</p>
+        <p class="time_formula">O(n&sup2;) - for every element (started from the second) is performed compare operation for elements with smaller index</p>
+        <p class="type">Type : Algorithm of stable sorting</p>
+        <p id="spent_time_insertion_sort">Time spent : </p>
+        <p id="sorted_result_insertion_sort"></p>
+    </div>
+
+    <div id="merge_sort">
+        <h1>Merge Sort</h1>
+        <p class="description">Divide and Conquer.</p>
+        <p class="explanation">Divede into two parts and sort. Merge to parts in one. Take element from one sequence and from another and compare = take the smallest and put it to the array. Divide array recursively till it will be only one element. Perform merge till one sequence</p>
+        <p class="time_formula">O(n log n)</p>
+        <p class="type">Algorithm of stable sorting</p>
+        <p id="spent_time_merge_sort">Time spent : </p>
+        <p id="sorted_result_merge_sort"></p>
+    </div>
+
+    <div id="bubble_sort">
+        <h1>Bubble Sort</h1>
+        <p class="description">Not efficient but very popular</p>
+        <p class="explanation">It works by repeatedly swapping adjacent element that are out of order</p>
+        <p class="time_formula">O(n&sup2;) - begins from the end of a list, Compares two adjacent elements</p>
+        <p class="type">Algorithm of stable sorting</p>
+        <p id="spent_time_bubble_sort">Time spent : </p>
+        <p id="sorted_result_bubble_sort"></p>
+    </div>
+    <script type="text/javascript" src="./src/main.js"></script>
+</body>
+</html>
