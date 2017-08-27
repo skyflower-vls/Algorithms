@@ -8,6 +8,6 @@ Algorithms:
 * Selection sort
 
 Will be added
-> Quick Find
-> Quick Union
-> Union Find
+* Quick Find
+* Quick Union
+* Union Find
