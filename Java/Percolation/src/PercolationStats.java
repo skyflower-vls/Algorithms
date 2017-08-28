@@ -1,12 +1,11 @@
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
-import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class PercolationStats 
 {
-	private int N;			// number of columns/rows in N x N grid
-	private int T;			// number of times to run stats
-	private double[] results;	// stores results of percolation experiments
+	private int _size;			// number of columns/rows in N x N grid
+	private int _timesToRunStats;			
+	private double[] _results;	// stores results of percolation experiments
 	
 	/**
 	 * perform trials independent experiments on an n-by-n grid
@@ -15,41 +14,42 @@ public class PercolationStats
 	 */
 	public PercolationStats(int n, int trials) 
 	{
-		if(n<=0 || trials<=0) 
-			throw new IllegalArgumentException("N & T must be greater than 0.");
+		if(n <= 0 || trials <= 0) 
+			throw new IllegalArgumentException("n & trials must be greater than 0.");
 		
-		this.N = n;
-		this.T = trials;
-		results = new double[T];
+		_size = n;
+		_timesToRunStats = trials;
+		_results = new double[_timesToRunStats];
 		
-		for(int i=0;i< T;i++)
+		for(int i = 0; i < _timesToRunStats; i++)
 		{
-			Percolation grid = new Percolation(N);
-			int result = 0;
-			while(!grid.percolates())
+			Percolation grid = new Percolation(_size);
+			
+			int numberOfTriesToOpen = 0;
+			while( !grid.percolates() )
 			{
-				openRandomBlockedNode(grid);
-				result++;
+				openRandomBlockedCell(grid);
+				numberOfTriesToOpen++;
 			}
-			results[i] = (double) result / (double) (N*N);
+			_results[i] = (double) numberOfTriesToOpen / (double) (_size * _size);
 		}
 	}
 	
-	private void openRandomBlockedNode(Percolation grid)
+	private void openRandomBlockedCell(Percolation grid)
 	{
 		boolean isOpen = false;
 		int randomRow = 0;
 		int randomCol = 0;
-		
+					
 		do
 		{
-			randomRow = StdRandom.uniform(1,N);
-			randomCol = StdRandom.uniform(1,N);
-			isOpen = grid.isOpen(randomRow,randomCol);
+			randomRow = StdRandom.uniform(0, _size);
+			randomCol = StdRandom.uniform(0, _size);
+			isOpen = grid.isOpen(randomRow, randomCol);
 		}
 		while(isOpen);
 		
-		grid.open(randomRow,randomCol);
+		grid.open(randomRow, randomCol);
 	}
 			   
 	/**
@@ -58,7 +58,7 @@ public class PercolationStats
 	*/
 	public double mean() 
 	{
-		return StdStats.mean(results);
+		return StdStats.mean(_results);
 	}
 			   
 	/**
@@ -67,7 +67,7 @@ public class PercolationStats
 	*/
 	public double stddev()                       
 	{
-		return StdStats.stddev(results);
+		return StdStats.stddev(_results);
 	}
 		   
 	/**
@@ -76,7 +76,7 @@ public class PercolationStats
 	*/
 	public double confidenceLo()                  
 	{
-		return mean()-((1.96*stddev())/Math.sqrt(T));
+		return mean() - ( (1.96*stddev() ) / Math.sqrt( _timesToRunStats ) );
 	}
 		   
 	/**
@@ -85,7 +85,7 @@ public class PercolationStats
 	*/
 	public double confidenceHi()                  
 	{
-		return mean()+((1.96*stddev())/Math.sqrt(T));
+		return mean() + ( ( 1.96 * stddev() ) / Math.sqrt( _timesToRunStats ) );
 	}
 	
 	/**
@@ -94,10 +94,10 @@ public class PercolationStats
 	*/
 	public static void main(String[] args)
 	{
-		int N = new Integer(50);
-		int T = new Integer(5);
+		int size = new Integer(50);
+		int timesToRun = new Integer(10);
 		
-		PercolationStats stats = new PercolationStats(N,T);
+		PercolationStats stats = new PercolationStats(size, timesToRun);
 		
 		System.out.println("mean:\t\t\t\t = " + stats.mean());
 		System.out.println("stddev:\t\t\t\t = " + stats.stddev());
