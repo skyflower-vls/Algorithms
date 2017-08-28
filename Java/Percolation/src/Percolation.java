@@ -2,8 +2,6 @@ import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
-//temp for testing
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Percolation 
 {	
@@ -12,7 +10,7 @@ public class Percolation
 	private int _virtualTopRoot = 0;
 	private int _virtualBottomRoot = 0;
 	private int _fieldArrayNumberOfElements = 0;
-	private int _size = 0;
+	private int _size = 0; // number of columns/rows in N x N grid
 	private int _openedElementsCount = 0;
 	
 	/**
@@ -21,6 +19,11 @@ public class Percolation
 	*/
 	public Percolation(int n)
 	{	   
+		if (n <= 0) 
+		{
+            throw new IllegalArgumentException("n <= 0");
+        }
+		
 		_size = n;
 		_fieldArrayNumberOfElements = n * n;
 		   
@@ -34,13 +37,13 @@ public class Percolation
 		
 		// temp for testing
 		showArray();
-		
-		// temp for testing
-		randomOpenField();
-		
+//		
+//		// temp for testing
+//		randomOpenField();
+//		
 		// temp for testing
 		System.out.println("__");
-		
+//		
 		// temp for testing
 		if (percolates())
 		{
@@ -222,7 +225,7 @@ public class Percolation
 		{
 			for (int y = 0; y < _size; y ++)
 			{			 
-				int random = ThreadLocalRandom.current().nextInt(0, 2);
+				int random = StdRandom.uniform(0,2);
 				if(random == 1)
 				{						  
 					open(i, y);
