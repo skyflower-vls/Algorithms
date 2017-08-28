@@ -3,9 +3,9 @@ import edu.princeton.cs.algs4.StdStats;
 
 public class PercolationStats 
 {
-	private int _size;			// number of columns/rows in N x N grid
+	private int _size;			// number of elements in the grid (size*size)
 	private int _timesToRunStats;			
-	private double[] _results;	// stores results of percolation experiments
+	private double[] _results;	// percolation experiments
 	
 	/**
 	 * perform trials independent experiments on an n-by-n grid

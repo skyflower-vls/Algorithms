@@ -1,236 +1,120 @@
-import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
+public class Percolation {
 
-public class Percolation 
-{	
-	private boolean[][] _field;
-	private WeightedQuickUnionUF _quickUnion;
-	private int _virtualTopRoot = 0;
-	private int _virtualBottomRoot = 0;
-	private int _fieldArrayNumberOfElements = 0;
-	private int _size = 0; // number of columns/rows in N x N grid
-	private int _openedElementsCount = 0;
-	
-	/**
-	* create n-by-n grid, with all sites blocked
-	* @param n
-	*/
-	public Percolation(int n)
-	{	   
-		if (n <= 0) 
-		{
-            throw new IllegalArgumentException("n <= 0");
+	private int _size = 0;
+    private boolean[][] _cellGrid;    
+
+    private int _virtualTopRoot = 0;
+    private int _virtualBottomRoot = 0;
+    
+    private WeightedQuickUnionUF _weightedQuickUF;
+    private WeightedQuickUnionUF _weightedQuickUFFull;
+
+
+    /**
+     * create N-by-N grid, with all sites blocked
+     * @param n
+     */
+    public Percolation(int n) 
+    { 
+        if (n <= 0) 
+        {
+            throw new IllegalArgumentException("N should not be n <= 0");
         }
-		
-		_size = n;
-		_fieldArrayNumberOfElements = n * n;
-		   
-		_virtualTopRoot = 0;
-		_virtualBottomRoot = _fieldArrayNumberOfElements + 1;
-		   
-		int fixedArraySizeWithVirtualElements = _fieldArrayNumberOfElements + 2;  // plus two virtual ids
-		_quickUnion = new WeightedQuickUnionUF(fixedArraySizeWithVirtualElements);
-					
-		createField(n);
-		
-		// temp for testing
-		showArray();
-//		
-//		// temp for testing
-//		randomOpenField();
-//		
-		// temp for testing
-		System.out.println("__");
-//		
-		// temp for testing
-		if (percolates())
-		{
-			System.out.println("Percolates!");			
-		}
-		
-		// temp for testing
-		showArray();			
-	}
-   
-	/**
-	* test client (optional)
-	* @param args
-	*/
-	public static void main(String[] args)   
-	{   
-		// temp for testing
-		new Percolation(5);
-	}
-   
-	/**
-	* is site (row, col) open?
-	* @param row
-	* @param col
-	* @return boolean
-	*/
-	public boolean isOpen(int row, int col)
-	{
-		if (!isFull(row, col)) 
-		{
-			return _field[row][col];
-		}
-		else
-		{
-			return false;
-		}
-	}
-   
-	/**
-	* Is site (row, col) full? 
-	* @param row
-	* @param col
-	* @return boolean
-	*/
-    public boolean isFull(int row, int col)  
+        
+        _weightedQuickUF = new WeightedQuickUnionUF(n * n + 2);
+        _weightedQuickUFFull = new WeightedQuickUnionUF(n * n + 1);
+
+        _size = n;
+        _cellGrid = new boolean[n][n];
+        
+        _virtualTopRoot = 0;
+        _virtualBottomRoot = n * n + 1;
+    }
+
+    /**
+     * open site (row i, column j) if it is not open already
+     * @param row
+     * @param col
+     */
+    public void open(int row, int col) 
+    {   
+        if (!isOpen(row, col)) 
+        {
+            int fieldIndex = getElementNumberInStructure(row, col);
+
+            if (row == 1) 
+            {
+            	_weightedQuickUF.union(_virtualTopRoot, fieldIndex);
+                _weightedQuickUFFull.union(_virtualTopRoot, fieldIndex);
+            }
+            
+            if (row == _size) 
+            {
+            	_weightedQuickUF.union(_virtualBottomRoot, fieldIndex);
+            }
+
+            union(fieldIndex, row + 1, col);
+            union(fieldIndex, row - 1, col);
+            union(fieldIndex, row, col - 1);
+            union(fieldIndex, row, col + 1);
+
+            _cellGrid[row - 1][col - 1] = true;
+        }
+    }
+
+    private void union(int cellIndex, int row, int col) {
+        if (!isOut(row-1, col-1) && isOpen(row, col)) 
+        {
+            int neighboursCellIndex = getElementNumberInStructure(row, col);
+            _weightedQuickUF.union(neighboursCellIndex, cellIndex);
+            _weightedQuickUFFull.union(neighboursCellIndex, cellIndex);
+        }
+    }
+    
+    private boolean isOut(int row, int col) 
     {
 	   boolean result = (col >= _size || col < 0 || row < 0 || row >= _size);
-	   return result; 		
+	   return result; 	
     }
-   
-	/**
-	* number of open sites
-	* @return integer
-	*/
-    public int numberOfOpenSites()       
-    {
-	   return _openedElementsCount;
+
+    /**
+     * does the system percolate?
+     * @return
+     */
+    public boolean percolates() 
+    {  
+        return _weightedQuickUF.connected(_virtualTopRoot, _virtualBottomRoot);
     }
-   
-	/**
-	* does the system percolate?
-	* @return boolean
-	*/
-	public boolean percolates()              
-	{
-		return _quickUnion.connected(_virtualTopRoot, _virtualBottomRoot);
-	}
-   
-	/**
-	* open site (row, col) if it is not open already
-	* @param row
-	* @param col
-	*/
-	public void open(int row, int col)    // 
-	{   
-		if (!isOpen(row, col)) 
-		{
-			_field[row][col] = true;
-			_openedElementsCount ++;
-					   
-			int currentId = getIdNumberFromArray(row, col);
-					   
-			if (row == 0) 
-			{
-				_quickUnion.union(currentId, _virtualTopRoot); 
-			}
-					   
-			if (row == _size - 1) 
-			{
-				_quickUnion.union(currentId, _virtualBottomRoot); 
-			}   
-				
-			if (isOpen(row-1, col)) 
-			{				   
-				_quickUnion.union(currentId, getIdNumberFromArray(row -  1, col));
-			}
-					   
-			if (isOpen(row+1, col)) 
-			{				   
-				_quickUnion.union(currentId, getIdNumberFromArray(row +  1, col));
-			}	
-					   
-			if (isOpen(row, col + 1)) 
-			{
-				_quickUnion.union(currentId, getIdNumberFromArray(row, col + 1));
-			}
-					   
-			if (isOpen(row, col - 1)) 
-			{
-				_quickUnion.union(currentId, getIdNumberFromArray(row, col - 1));
-			}
-		}
-	}
-   
-	/**
-	* get position in the array (+virtual top id)
-	* @param row
-	* @param col
-	* @return integer
-	*/
-	private int getIdNumberFromArray(int row, int col)
-	{
-		int result = (_size * row)  +  col + 1; //plus first virtual
-		   
-		return result;
-	}
-   
-	/**
-	* create array with default values with fixed size  - size * size
-	* @param size
-	*/
-	private void createField(int size)
-	{
-		_field = new boolean[size][size];
-			   
-		for (int i = 0; i < size; i++) 
-		{
-			for (int y = 0; y < size; y ++)
-			{
-				_field[i][y] = false;
-			}
-		}
-	}
-   
-	/**
-	* print array to the console
-	*/
-	private void showArray()
-	{
-		String result = "";
-		   
-		for (int i = 0; i < _size; i++) 
-		{			 
-			result = "";
-			   
-			for (int y = 0; y < _size; y++)
-			{				   
-				if( _field[i][y]) 
-				{
-					result = result.concat("1 ");
-				} 
-				else 
-				{
-					result = result.concat("0 ");
-				}   
-			}				
-					   
-			System.out.println(result);
-		}
-	}
-   
-   
-	/**
-	* optional for testing, fills array with random values
-	*/
-	private void randomOpenField()
-	{
-		for (int i = 0; i < _size; i++)
-		{
-			for (int y = 0; y < _size; y ++)
-			{			 
-				int random = StdRandom.uniform(0,2);
-				if(random == 1)
-				{						  
-					open(i, y);
-				}
-			}
-		}
-	}
+    
+    private int getElementNumberInStructure(int row, int col) {
+        return (row - 1) * _size + col;
+    }
+    
+    /**
+     * is cell Opened?
+     * @param row
+     * @param col
+     * @return
+     */
+    public boolean isOpen(int row, int col) 
+    {   
+        return _cellGrid[row - 1][col - 1];
+    }
+
+    /**
+     * is cell connected to top?
+     * @param row
+     * @param col
+     * @return
+     */
+    public boolean isFull(int row, int col) {   
+        if (isOpen(row, col)) 
+        {
+            int fieldIndex = getElementNumberInStructure(row, col);
+            return _weightedQuickUFFull.connected(_virtualTopRoot, fieldIndex);
+        }
+        return false;
+    }
 }
