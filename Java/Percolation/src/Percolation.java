@@ -40,7 +40,7 @@ public class Percolation {
      */
     public void open(int row, int col) 
     {   
-        if (!isOpen(row, col)) 
+        if (!isOut(row-1, col-1) && !isOpen(row, col)) 
         {
             int fieldIndex = getElementNumberInStructure(row, col);
 
@@ -100,7 +100,11 @@ public class Percolation {
      */
     public boolean isOpen(int row, int col) 
     {   
-        return _cellGrid[row - 1][col - 1];
+    	if (!isOut(row-1, col-1)) 
+    	{
+    		 return _cellGrid[row - 1][col - 1];	
+    	}
+    	return false;
     }
 
     /**
