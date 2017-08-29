@@ -6,8 +6,7 @@ public class PercolationStats {
 
     private double _mean;
     private double _stddev;
-    private int _timesToRun = 0;
-    
+    private int _timesToRun = 0;    
     
     /**
      * perform T independent experiments on an N-by-N grid
@@ -15,23 +14,24 @@ public class PercolationStats {
      * @param N
      * @param T
      */
-    public PercolationStats(int N, int T) 
+    public PercolationStats(int numberOfElementsInOneSide, int timesToRun) 
     { 
-        if (N <= 0) 
+        if (numberOfElementsInOneSide <= 0) 
         {
             throw new IllegalArgumentException("The grid size must be bigger 0");
         }
         
-        if (T <= 0) 
+        if (timesToRun <= 0) 
         {
             throw new IllegalArgumentException("The number of experiments must be bigger 0");
         }
 
-        _timesToRun = T;
+        _timesToRun = timesToRun;
         double[] percolationThresholds = new double[_timesToRun];
         
-        for (int i = 0; i < _timesToRun; i++) {
-            Percolation percolation = new Percolation(N);
+        for (int i = 0; i < _timesToRun; i++) 
+        {
+            Percolation percolation = new Percolation(numberOfElementsInOneSide);
 
             int runs = 0;
             while (!percolation.percolates()) 
@@ -41,15 +41,16 @@ public class PercolationStats {
 
                 do 
                 {
-                    column = 1 + StdRandom.uniform(N);
-                    row = 1 + StdRandom.uniform(N);
-                } while (percolation.isOpen(row, column));
+                    column = 1 + StdRandom.uniform(numberOfElementsInOneSide);
+                    row = 1 + StdRandom.uniform(numberOfElementsInOneSide);
+                } 
+                while (percolation.isOpen(row, column));
 
                 percolation.open(row, column);
                 runs++;
             }
 
-            percolationThresholds[i] = runs / (double) (N * N);
+            percolationThresholds[i] = runs / (double) (numberOfElementsInOneSide * numberOfElementsInOneSide);
         }
 
         _mean = StdStats.mean(percolationThresholds);
@@ -80,9 +81,8 @@ public class PercolationStats {
      * @return
      */
     public double confidenceLo() 
-    {  
-    	double confidenceFraction = (1.96 * stddev()) / Math.sqrt(_timesToRun);
-        return mean() - confidenceFraction;
+    {      	
+        return mean() - getConfidenceFraction();
     }
 
     /**
@@ -91,16 +91,21 @@ public class PercolationStats {
      */
     public double confidenceHi() 
     {  
-    	double confidenceFraction = (1.96 * stddev()) / Math.sqrt(_timesToRun);
-        return mean() + confidenceFraction;
+    	
+        return mean() + getConfidenceFraction();
     }
 
+    private double getConfidenceFraction()
+    {
+    	double confidenceFraction = (1.96 * stddev()) / Math.sqrt(_timesToRun);
+    	return confidenceFraction;
+    }
 
     public static void main(String[] args) {
-        int N = 50;
+        int numberOfElementsInOneSide = 50;
         int timesToRun = 5;
         
-        PercolationStats stats = new PercolationStats(N, timesToRun);
+        PercolationStats stats = new PercolationStats(numberOfElementsInOneSide, timesToRun);
         System.out.println("mean                    = " + stats.mean());
         System.out.println("stddev                  = " + stats.stddev());
         System.out.println("95% confidence interval = " + stats.confidenceLo() + ", " + stats.confidenceHi());
