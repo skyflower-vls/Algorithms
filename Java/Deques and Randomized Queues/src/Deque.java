@@ -1,19 +1,25 @@
 import java.util.Iterator;
 
-public class Deque<Item> implements Iterable<Item> {
+public class Deque<Item> implements Iterable<Item> 
+{
+    private Node<Item> first;
+    private Node<Item> last;
+    
+	private int size = 0;
+	
 	/**
 	 * construct an empty deque
 	 */
-	public Deque()                           // 
+	public Deque()                            
 	{
-		   
+		
 	}
 	   
 	/**
 	 * is the deque empty?
 	 * @return
 	 */
-	public boolean isEmpty()                 // 
+	public boolean isEmpty()                  
 	{
 		return false;
 	}
@@ -23,8 +29,8 @@ public class Deque<Item> implements Iterable<Item> {
 	 * @return
 	 */
 	public int size()                        
-	{
-		return 0;
+	{	 
+		return size;
 	}
 	   
 	/**
@@ -33,7 +39,10 @@ public class Deque<Item> implements Iterable<Item> {
 	 */
 	public void addFirst(Item item)          
 	{
-		
+		if (item == null) 
+		{
+			throw new java.lang.IllegalArgumentException("Item should not be null");
+		}
 	}
 	
 	/**
@@ -42,7 +51,10 @@ public class Deque<Item> implements Iterable<Item> {
 	 */
 	public void addLast(Item item)           
 	{
-		
+		if (item == null) 
+		{
+			throw new java.lang.IllegalArgumentException("Item should not be null");
+		}
 	}
 	   
 	/**
@@ -51,6 +63,10 @@ public class Deque<Item> implements Iterable<Item> {
 	 */
 	public Item removeFirst()                
 	{
+		if (size() == 0)
+		{
+			throw new java.util.NoSuchElementException("There is no first element");
+		}
 		return null;
 	}
 	   
@@ -60,6 +76,10 @@ public class Deque<Item> implements Iterable<Item> {
 	 */
 	public Item removeLast()                  
 	{
+		if (size() == 0)
+		{
+			throw new java.util.NoSuchElementException("There is no last element");
+		}
 		return null;
 	}
 	   
@@ -68,7 +88,7 @@ public class Deque<Item> implements Iterable<Item> {
 	 */
 	public Iterator<Item> iterator()         
 	{
-		return null;
+		return new DequeIterator();
 	}
 	   
 	/**
@@ -79,4 +99,38 @@ public class Deque<Item> implements Iterable<Item> {
 	{
 		   
 	}
+	
+	/**
+	 * Iterator for Deque 
+	 */
+	private class DequeIterator implements Iterator<Item> 
+	{
+		public boolean hasNext() 
+		{ 
+			return false;
+		}
+		
+		public void remove() 
+		{ 
+			throw new java.lang.UnsupportedOperationException("You can't use remove in the iterator");
+		}
+		
+		public Item next() 
+		{
+			return null;
+		}
+		
+	}
+	
+	/**
+	 * Node item for iterations 
+	 */
+	private class Node<Item> 
+	{
+		private Node(Item item) 
+		{
+			
+		}
+	}
+	 
 }

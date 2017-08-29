@@ -59,7 +59,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 	 */
 	public Iterator<Item> iterator()          
 	{
-		return null;
+		return new RandomizedQueueIterator();
 	}
 	
 	/**
@@ -69,4 +69,23 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 	public static void main(String[] args) 
 	{		
 	}
+	
+	private class RandomizedQueueIterator implements Iterator<Item> 
+	{
+		public boolean hasNext() 
+		{ 
+			return false;
+		}
+		
+		public void remove() 
+		{ 
+			throw new java.lang.UnsupportedOperationException("You can't use remove in the iterator");
+		}
+		
+		public Item next() 
+		{
+			return null;
+		}
+	}
+	
 }
