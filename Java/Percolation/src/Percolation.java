@@ -8,6 +8,7 @@ public class Percolation
 
     private int _virtualTopRoot = 0;
     private int _virtualBottomRoot = 0;
+    private int _numberOfOpenSites = 0;
     
     private WeightedQuickUnionUF _weightedQuickUF;  // for percolation checks from the top to the bottom
     private WeightedQuickUnionUF _weightedQuickUFFull; // for percolation checks to the "%element"
@@ -19,10 +20,13 @@ public class Percolation
      */
     public Percolation(int n) 
     { 
+    	
         if (n <= 0) 
         {
             throw new IllegalArgumentException("N should not be less than 0");
-        }               
+        }
+        
+        _numberOfOpenSites = 0;
         
         int elementsInGrid = n * n;
         _weightedQuickUF = new WeightedQuickUnionUF(elementsInGrid + 2);
@@ -82,6 +86,7 @@ public class Percolation
             union(fieldIndex, row, col - 1);
 
             _cellGrid[row - 1][col - 1] = true;
+            _numberOfOpenSites++;
         }
     }
 
@@ -188,6 +193,11 @@ public class Percolation
 				}
 			}
 		}
+	}
+	
+	public int numberOfOpenSites()
+	{
+		return _numberOfOpenSites;
 	}
     
     public static void main(String[] args)
