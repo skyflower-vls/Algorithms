@@ -12,10 +12,13 @@ var InsertionSort = function () {
         var sortedArray = dataArray.slice(0); // clone
 
         var startedTime = new Date().getTime();
+        var i, j = 0;
+        var arrayLen = sortedArray.length;
+        var key;
 
-        for (var i = 1; i < sortedArray.length; i++) {
-            var key = sortedArray[i]; // second element
-            var j = i - 1;             // previous element
+        for (i = 1; i < arrayLen; i++) {
+            key = sortedArray[i];       // second element
+            j = i - 1;              // previous element
 
             while (j >= 0 && key < sortedArray[j]) {
                 sortedArray[j + 1] = sortedArray[j]; // second = first

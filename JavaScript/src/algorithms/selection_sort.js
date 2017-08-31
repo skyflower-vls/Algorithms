@@ -10,20 +10,24 @@ var SelectionSort = function (dataArray) {
      * **/
     var algorithm = function (dataArray) {
         var sortedArray = dataArray.slice(0); // clone
-
         var startedTime = new Date().getTime();
+        var i = 0;
+        var j = 0;
+        var minValueIndex = 0;
+        var arrayLen = sortedArray.length;
+        var tmp;
 
-        for (var i = 0; i<sortedArray.length; i++) {
-            var minValueIndex = i;
+        for (i ; i < arrayLen; i++) {
+            minValueIndex = i;
 
-            for (var j=minValueIndex; j<sortedArray.length; j++) {
+            for (j = minValueIndex; j < arrayLen; j++) {
                 if (sortedArray[minValueIndex] > sortedArray[j]) {
                     minValueIndex = j;
                 }
             }
 
             if (minValueIndex != i) {
-                var tmp = sortedArray[i];
+                tmp = sortedArray[i];
                 sortedArray[i] = sortedArray[minValueIndex];
                 sortedArray[minValueIndex] = tmp;
             }

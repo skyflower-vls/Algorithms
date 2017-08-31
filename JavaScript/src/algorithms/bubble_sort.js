@@ -15,11 +15,14 @@ var BubbleSort = function (dataArray) {
 
         var isChanged = false;
 
+        var i = 0;
+        var tmp;
+        var arrayLen = sortedArray.length;
         do {
             isChanged = false;
-            for (var i = sortedArray.length - 1; i >= 0; i--) {
+            for (i = arrayLen - 1; i >= 0; i--) {
                 if (sortedArray[i] < sortedArray[i-1]) {
-                    var tmp = sortedArray[i - 1];
+                    tmp = sortedArray[i - 1];
                     sortedArray[i - 1] = sortedArray[i];
                     sortedArray[i] = tmp;
                     isChanged = true;
