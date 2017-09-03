@@ -6,8 +6,20 @@
 main();
 
 function main() {
-    var dataToSort = new Array();
+    var startAlgorithmsButton = document.getElementById("startAlgorithms");
+    startAlgorithmsButton.onclick = onStartButtonClicked;
+    var randomItemsNumberInputType = document.getElementById("randomItemsNumberInputType");
+    randomItemsNumberInputType.value = MAX_SIZE; //TEMP
+}
 
+
+function onStartButtonClicked() {
+    var randomItemsNumberInputType = document.getElementById("randomItemsNumberInputType");
+    MAX_SIZE = randomItemsNumberInputType.value;  // TEMP
+    var resultsCheckbox = document.getElementById("resultsCheckbox");
+    IS_NNED_TO_SHOW_RESULTS = resultsCheckbox.checked; // TEMP
+
+    var dataToSort = new Array();
     initialize(dataToSort);
 
     executeAlgorithm(new InsertionSort(), dataToSort);
@@ -28,7 +40,13 @@ function executeAlgorithm(command, dataToSort) {
 /**  @param {Array.<Number>} **/
 function initialize(dataToSort) {
     initArrayWithData(dataToSort);
-    printArrayToNode(dataToSort, "source_data");
+
+    emptyNode("source_data");
+    showNode("source_data", IS_NNED_TO_SHOW_RESULTS);
+
+    if (IS_NNED_TO_SHOW_RESULTS) {
+        printArrayToNode(dataToSort, "source_data");
+    }
 }
 
 /**  @param {Array.<Number>} **/

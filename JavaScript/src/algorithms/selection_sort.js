@@ -58,7 +58,11 @@ var SelectionSort = function (dataArray) {
         writeResult: function (dataObject) {
             var text = dataObject.timeSpent.toString();
             addTextToElementId(text, ElementIdConst.SelectionSort.SPENT_TIME);
-            printArrayToNode(dataObject.sortedData, ElementIdConst.SelectionSort.SORTED_RESULT)
+            emptyNode(ElementIdConst.SelectionSort.SORTED_RESULT);
+            showNode(ElementIdConst.SelectionSort.SORTED_RESULT, IS_NNED_TO_SHOW_RESULTS);
+            if (IS_NNED_TO_SHOW_RESULTS) {
+                printArrayToNode(dataObject.sortedData, ElementIdConst.SelectionSort.SORTED_RESULT)
+            }
         }
 
     }

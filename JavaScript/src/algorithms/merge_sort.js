@@ -84,7 +84,11 @@ function MergeSort() {
         writeResult: function (dataObject) {
             var text = dataObject.timeSpent.toString();
             addTextToElementId(text, ElementIdConst.MergeSort.SPENT_TIME);
-            printArrayToNode(dataObject.sortedData, ElementIdConst.MergeSort.SORTED_RESULT);
+            emptyNode(ElementIdConst.MergeSort.SORTED_RESULT);
+            showNode(ElementIdConst.MergeSort.SORTED_RESULT, IS_NNED_TO_SHOW_RESULTS);
+            if (IS_NNED_TO_SHOW_RESULTS) {
+                printArrayToNode(dataObject.sortedData, ElementIdConst.MergeSort.SORTED_RESULT);
+            }
         }
     }
 

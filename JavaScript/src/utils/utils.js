@@ -7,6 +7,12 @@
  * **/
 function printArrayToNode(array, nodeName) {
     var sourceDataDiv = document.getElementById(nodeName);
+    sourceDataDiv.innerHTML = "";
+
+    while (sourceDataDiv.hasChildNodes()) {
+        sourceDataDiv.removeChild(sourceDataDiv.lastChild);
+    }
+
     for (var i = 0; i < array.length; i++) {
         var text = array[i].toString() + "; ";
         var textNode = document.createTextNode(text);
@@ -19,5 +25,20 @@ function printArrayToNode(array, nodeName) {
  * **/
 function addTextToElementId(text, nodeName) {
     var node = document.getElementById(nodeName);
-    node.innerHTML += text;
+    node.innerHTML = "";
+    node.innerHTML = text;
+}
+
+function showNode(nodeName, isVisible) {
+    var node = document.getElementById(nodeName);
+    if (isVisible) {
+        node.style.visibility = "visible";
+    } else {
+        node.style.visibility = "hidden";
+    }
+}
+
+function emptyNode(nodeName) {
+    var node = document.getElementById(nodeName);
+    node.innerHTML = "";
 }
