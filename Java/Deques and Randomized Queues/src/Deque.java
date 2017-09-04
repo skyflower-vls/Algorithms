@@ -51,8 +51,7 @@ public class Deque<Item> implements Iterable<Item>
 			else
 			{
 				Node<Item> oldFirst = this.first;
-				this.first = new Node<>(item);
-				
+				this.first = new Node<>(item);				
 				oldFirst.setPrevious(this.first);
 				this.first.setItem(item);
 				this.first.setNext(oldFirst);
@@ -82,8 +81,7 @@ public class Deque<Item> implements Iterable<Item>
 				Node<Item> newItemNode = new Node<>(item);		
 				this.last.setNext(newItemNode);
 				newItemNode.setItem(item);
-				newItemNode.setPrevious(this.last);				
-				
+				newItemNode.setPrevious(this.last);	
 				this.last = newItemNode;						
 			}	
 		}
@@ -104,8 +102,16 @@ public class Deque<Item> implements Iterable<Item>
 			size--;
 			
 			Item item = this.first.getItem();
-			this.first = this.first.getNext();
-			this.first.setPrevious(null);			
+			Node<Item> nextNode = this.first.getNext();
+			if (nextNode != null) {
+				this.first = this.first.getNext();
+				this.first.setPrevious(null);	
+			}	
+			else
+			{
+				this.first = null;
+				this.last = null;
+			}
 			return item;
 		}
 	}
@@ -125,8 +131,17 @@ public class Deque<Item> implements Iterable<Item>
 			size--;
 			
 			Item item = this.last.getItem();
-			this.last = this.last.getPrevious();
-			this.last.setNext(null);
+			
+			Node<Item> previousNode = this.last.getPrevious();
+			if (previousNode != null) {
+				this.last = this.last.getPrevious();
+				this.last.setNext(null);
+			}	
+			else
+			{
+				this.first = null;
+				this.last = null;
+			}
 			return item;
 		}
 	}
@@ -158,9 +173,15 @@ public class Deque<Item> implements Iterable<Item>
 		
 		public Item next() 
 		{
-			Item item = currentElement.getItem();
-			currentElement = currentElement.getNext(); 
-			return item;
+			if (hasNext()) {				
+				Item item = currentElement.getItem();
+				currentElement = currentElement.getNext(); 
+				return item;
+			}
+			else 
+			{
+				throw new java.util.NoSuchElementException("There is no Next element for iteration");
+			}
 		}		
 	}
 	
@@ -254,20 +275,16 @@ public class Deque<Item> implements Iterable<Item>
 	 */
 	public static void main(String[] args)   
 	{		
-		  Deque<String> deq = new Deque<>();
-		  deq.addFirst("one");
-		  deq.addFirst("two");
-		  deq.addFirst("three");
-		  deq.removeFirst();
-		  deq.addLast("Ford");
-		  deq.addLast("Audi");
-		  deq.removeLast();
-		  deq.addLast("Ford3+");
+		  Deque<Integer> deq = new Deque<>();
 		  
-		  for (String item: deq)
-		  {
-			  System.out.print(item);
-		  }
+		  deq.addFirst(2);
+		  deq.removeLast();
+		 
+		  
+//		  for (String item: deq)
+//		  {
+//			  System.out.print(item);
+//		  }
 	}
 	 
 }

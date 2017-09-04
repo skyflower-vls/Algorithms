@@ -94,7 +94,7 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 			
 			int haveALength = length/2;
 			
-			if (elementsCounter == haveALength)
+			if (elementsCounter == haveALength && haveALength != 0)
 			{	
 				array = resizeArray(haveALength);				
 			}
@@ -113,13 +113,20 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 		int length = array.length;		
 		Item result = null;
 		
-		do 
-		{
-			randomIndex = StdRandom.uniform(length);
-			
-			result = array[randomIndex];
+		if (isEmpty()) {
+			throw new java.util.NoSuchElementException("There is no element");
 		}
-		while(result == null);	
+		else
+		{
+//			do 
+//			{
+				randomIndex = StdRandom.uniform(length);
+				
+				result = array[randomIndex];
+//			}
+//			while(result == null);	
+		}
+		
 		
 		return result;
 	}
@@ -140,26 +147,12 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 	{		
 		
 		RandomizedQueue<String> randomQ = new RandomizedQueue<>();
-		  randomQ.enqueue("one");
-		  for (String item: randomQ)
-		  {
-			  System.out.print(item + " ");
-		  }
-		  
-		  System.out.print("\n");
-		  randomQ.enqueue("two");
-		  for (String item: randomQ)
-		  {
-			  System.out.print(item + " ");
-		  }
-		  
-		  System.out.print("\n");
-		  randomQ.enqueue("three");
-		  for (String item: randomQ)
-		  {
-			  System.out.print(item + " ");
-		  }
-		  
+//		  randomQ.enqueue("one");
+//		  for (String item: randomQ)
+//		  {
+//			  System.out.print(item + " ");
+//		  }
+//		  
 		  System.out.print("\n");
 		  randomQ.dequeue();
 		  for (String item: randomQ)
@@ -167,34 +160,48 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 			  System.out.print(item + " ");
 		  }
 		  
-		  System.out.print("\n");
-		  randomQ.enqueue("Ford");
-		  for (String item: randomQ)
-		  {
-			  System.out.print(item + " ");
-		  }
-		  
-		  System.out.print("\n");
-		  randomQ.enqueue("Audi");
-		  for (String item: randomQ)
-		  {
-			  System.out.print(item + " ");
-		  }
-		  
-		  System.out.print("\n");
-		  randomQ.dequeue();
-		  for (String item: randomQ)
-		  {
-			  System.out.print(item + " ");
-		  }
-		  
-		  System.out.print("\n");
-		  randomQ.enqueue("Ford3+");
-		  
-		  for (String item: randomQ)
-		  {
-			  System.out.print(item + " ");
-		  }		
+//		  System.out.print("\n");
+//		  randomQ.enqueue("three");
+//		  for (String item: randomQ)
+//		  {
+//			  System.out.print(item + " ");
+//		  }
+//		  
+//		  System.out.print("\n");
+//		  randomQ.dequeue();
+//		  for (String item: randomQ)
+//		  {
+//			  System.out.print(item + " ");
+//		  }
+//		  
+//		  System.out.print("\n");
+//		  randomQ.enqueue("Ford");
+//		  for (String item: randomQ)
+//		  {
+//			  System.out.print(item + " ");
+//		  }
+//		  
+//		  System.out.print("\n");
+//		  randomQ.enqueue("Audi");
+//		  for (String item: randomQ)
+//		  {
+//			  System.out.print(item + " ");
+//		  }
+//		  
+//		  System.out.print("\n");
+//		  randomQ.dequeue();
+//		  for (String item: randomQ)
+//		  {
+//			  System.out.print(item + " ");
+//		  }
+//		  
+//		  System.out.print("\n");
+//		  randomQ.enqueue("Ford3+");
+//		  
+//		  for (String item: randomQ)
+//		  {
+//			  System.out.print(item + " ");
+//		  }		
 	}
 	
 	private class RandomizedQueueIterator implements Iterator<Item> 
@@ -212,9 +219,17 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 		
 		public Item next() 
 		{
-			Item item = array[iteratorCounter];
-			iteratorCounter++;
-			return item;
+			if (hasNext())
+			{
+				Item item = array[iteratorCounter];
+				iteratorCounter++;
+				return item;
+			}
+			else 
+			{
+				throw new java.util.NoSuchElementException("There is no Next element for iteration");
+			}
+			
 		}
 	}
 	
