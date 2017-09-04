@@ -5,13 +5,8 @@
 var MAX_SIZE     = 500;
 var MAX_RANGE    = 100;
 
-var IS_NNED_TO_SHOW_RESULTS = false;
+var IS_NEED_TO_SHOW_RESULTS = false;
 
-var AlgorithmNamesConst = {
-    INSERTION   : "INSERTION",
-    MERGE       : "MERGE",
-    BUBBLE      : "BUBBLE"
-};
 
 var ElementIdConst = {
     InsertionSort : {

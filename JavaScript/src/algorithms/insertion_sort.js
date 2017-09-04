@@ -52,8 +52,8 @@ var InsertionSort = function () {
             var text = dataObject.timeSpent.toString();
             addTextToElementId(text, ElementIdConst.InsertionSort.SPENT_TIME);
             emptyNode(ElementIdConst.InsertionSort.SORTED_RESULT);
-            showNode(ElementIdConst.InsertionSort.SORTED_RESULT, IS_NNED_TO_SHOW_RESULTS);
-            if (IS_NNED_TO_SHOW_RESULTS) {
+            showNode(ElementIdConst.InsertionSort.SORTED_RESULT, IS_NEED_TO_SHOW_RESULTS);
+            if (IS_NEED_TO_SHOW_RESULTS) {
                 printArrayToNode(dataObject.sortedData, ElementIdConst.InsertionSort.SORTED_RESULT)
             }
         }

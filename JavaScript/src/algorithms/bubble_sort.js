@@ -56,8 +56,8 @@ var BubbleSort = function (dataArray) {
             var text = dataObject.timeSpent.toString();
             addTextToElementId(text, ElementIdConst.BubbleSort.SPENT_TIME);
             emptyNode(ElementIdConst.BubbleSort.SORTED_RESULT);
-            showNode(ElementIdConst.BubbleSort.SORTED_RESULT, IS_NNED_TO_SHOW_RESULTS);
-            if (IS_NNED_TO_SHOW_RESULTS) {
+            showNode(ElementIdConst.BubbleSort.SORTED_RESULT, IS_NEED_TO_SHOW_RESULTS);
+            if (IS_NEED_TO_SHOW_RESULTS) {
                 printArrayToNode(dataObject.sortedData, ElementIdConst.BubbleSort.SORTED_RESULT)
             }
         }

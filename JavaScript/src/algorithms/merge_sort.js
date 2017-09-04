@@ -85,8 +85,8 @@ function MergeSort() {
             var text = dataObject.timeSpent.toString();
             addTextToElementId(text, ElementIdConst.MergeSort.SPENT_TIME);
             emptyNode(ElementIdConst.MergeSort.SORTED_RESULT);
-            showNode(ElementIdConst.MergeSort.SORTED_RESULT, IS_NNED_TO_SHOW_RESULTS);
-            if (IS_NNED_TO_SHOW_RESULTS) {
+            showNode(ElementIdConst.MergeSort.SORTED_RESULT, IS_NEED_TO_SHOW_RESULTS);
+            if (IS_NEED_TO_SHOW_RESULTS) {
                 printArrayToNode(dataObject.sortedData, ElementIdConst.MergeSort.SORTED_RESULT);
             }
         }
