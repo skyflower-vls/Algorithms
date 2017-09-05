@@ -44,29 +44,13 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 			throw new java.lang.IllegalArgumentException("Item should not be null");
 		}
 		else 
-		{
+		{	
+			array[elementsCounter] = item;						
 			elementsCounter++;
 			
-			int length = array.length;
-			
-			if (elementsCounter-1 == length)
-			{	
-				array = resizeArray(length * 2);
-				length = array.length;		
-			}
-						
-			randomIndex = StdRandom.uniform(length);
-			if (array[randomIndex] != null)
-			{
-				for (int i = length - 1; i > randomIndex; i--)
-				{	
-					array[i] = array[i-1]; 
-				}
-			}
-			array[randomIndex] = item;	
+			increaseArray();									
 		}		
 	}
-	 
 		
 	/**
 	 * remove and return a random item
@@ -80,24 +64,17 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 		}
 		else
 		{	
-			elementsCounter--;
-			
-			int length = array.length;
-			Item randomItem = sample();		
-			
-			for (int i = randomIndex; i < length - 1; i++)
+			Item randomItem = sample();
+						
+			for (int i = randomIndex; i < elementsCounter; i++)
 			{	
 				array[i] = array[i+1]; 
 			}			
 			
-			array[length - 1] = null;
+			array[elementsCounter] = null;						
+			elementsCounter--;
 			
-			int haveALength = length/2;
-			
-			if (elementsCounter == haveALength && haveALength != 0)
-			{	
-				array = resizeArray(haveALength);				
-			}
+			decreaseArray();
 			
 			return randomItem;
 		}
@@ -110,23 +87,21 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 	 */
 	public Item sample()                     
 	{
-		int length = array.length;		
 		Item result = null;
 		
-		if (isEmpty()) {
+		if (isEmpty()) 
+		{
 			throw new java.util.NoSuchElementException("There is no element");
 		}
 		else
 		{
-//			do 
-//			{
-				randomIndex = StdRandom.uniform(length);
-				
+			do 
+			{
+				randomIndex = StdRandom.uniform(elementsCounter);				
 				result = array[randomIndex];
-//			}
-//			while(result == null);	
+			}
+			while(result == null);				
 		}
-		
 		
 		return result;
 	}
@@ -144,15 +119,33 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 	 * @param args
 	 */
 	public static void main(String[] args) 
-	{		
+	{	
 		
 		RandomizedQueue<String> randomQ = new RandomizedQueue<>();
-//		  randomQ.enqueue("one");
-//		  for (String item: randomQ)
-//		  {
-//			  System.out.print(item + " ");
-//		  }
-//		  
+	
+		  randomQ.enqueue("one");
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }
+		  System.out.print("\n");
+		  randomQ.dequeue();
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }
+		  System.out.print("\n");
+		  randomQ.dequeue();
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }
+		  randomQ.enqueue("one");
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }
+		  
 		  System.out.print("\n");
 		  randomQ.dequeue();
 		  for (String item: randomQ)
@@ -160,56 +153,72 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 			  System.out.print(item + " ");
 		  }
 		  
-//		  System.out.print("\n");
-//		  randomQ.enqueue("three");
-//		  for (String item: randomQ)
-//		  {
-//			  System.out.print(item + " ");
-//		  }
-//		  
-//		  System.out.print("\n");
-//		  randomQ.dequeue();
-//		  for (String item: randomQ)
-//		  {
-//			  System.out.print(item + " ");
-//		  }
-//		  
-//		  System.out.print("\n");
-//		  randomQ.enqueue("Ford");
-//		  for (String item: randomQ)
-//		  {
-//			  System.out.print(item + " ");
-//		  }
-//		  
-//		  System.out.print("\n");
-//		  randomQ.enqueue("Audi");
-//		  for (String item: randomQ)
-//		  {
-//			  System.out.print(item + " ");
-//		  }
-//		  
-//		  System.out.print("\n");
-//		  randomQ.dequeue();
-//		  for (String item: randomQ)
-//		  {
-//			  System.out.print(item + " ");
-//		  }
-//		  
-//		  System.out.print("\n");
-//		  randomQ.enqueue("Ford3+");
-//		  
-//		  for (String item: randomQ)
-//		  {
-//			  System.out.print(item + " ");
-//		  }		
+		  System.out.print("\n");
+		  randomQ.enqueue("three");
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }
+		  
+		  System.out.print("\n");
+		  randomQ.dequeue();
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }
+		  
+		  System.out.print("\n");
+		  randomQ.enqueue("Ford");
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }
+		  
+		  System.out.print("\n");
+		  randomQ.enqueue("Audi");
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }
+		  
+		  System.out.print("\n");
+		  randomQ.dequeue();
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }
+		  
+		  System.out.print("\n");
+		  randomQ.enqueue("Ford3+");
+		  
+		  for (String item: randomQ)
+		  {
+			  System.out.print(item + " ");
+		  }	
 	}
 	
 	private class RandomizedQueueIterator implements Iterator<Item> 
 	{
 		int iteratorCounter = 0;
+		int[] randomArray;
+		
+		public RandomizedQueueIterator() 
+		{
+			iteratorCounter = 0;
+			
+            this.randomArray = new int[elementsCounter];
+            
+            for (int i = 0; i < elementsCounter; i++) 
+            {
+            	randomArray[i] = i;
+            }
+            
+            StdRandom.shuffle(randomArray);
+        }
+		
 		public boolean hasNext() 
-		{ 
-			return array.length > iteratorCounter;
+		{ 			
+			return elementsCounter > iteratorCounter;
 		}
 		
 		public void remove() 
@@ -221,7 +230,7 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 		{
 			if (hasNext())
 			{
-				Item item = array[iteratorCounter];
+				Item item = array[randomArray[iteratorCounter]];
 				iteratorCounter++;
 				return item;
 			}
@@ -251,4 +260,25 @@ public class RandomizedQueue<Item> implements Iterable<Item>
 		
 		return resizedArray;
 	}	
+	
+	private void increaseArray()
+	{
+		int length = array.length;	
+		
+		if (elementsCounter == length)
+		{	
+			array = resizeArray(length * 2);
+			length = array.length;		
+		}	
+	}
+	
+	private void decreaseArray()
+	{		
+		int haveALength = array.length/2;
+		
+		if (elementsCounter == haveALength && haveALength != 0)
+		{	
+			array = resizeArray(haveALength + 1);				
+		}
+	}
 }
