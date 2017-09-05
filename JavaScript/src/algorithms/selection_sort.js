@@ -20,7 +20,7 @@ var SelectionSort = function (dataArray) {
         for (i ; i < arrayLen; i++) {
             minValueIndex = i;
 
-            for (j = minValueIndex; j < arrayLen; j++) {
+            for (j = minValueIndex + 1; j < arrayLen; j++) {
                 if (sortedArray[minValueIndex] > sortedArray[j]) {
                     minValueIndex = j;
                 }

@@ -29,6 +29,7 @@ function addTextToElementId(text, nodeName) {
     node.innerHTML = text;
 }
 
+
 function showNode(nodeName, isVisible) {
     var node = document.getElementById(nodeName);
     if (isVisible) {
@@ -38,6 +39,10 @@ function showNode(nodeName, isVisible) {
     }
 }
 
+/**
+ * clear inner text of the node
+ * @param nodeName
+ */
 function emptyNode(nodeName) {
     var node = document.getElementById(nodeName);
     node.innerHTML = "";

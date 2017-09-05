@@ -14,19 +14,18 @@ var InsertionSort = function () {
         var startedTime = new Date().getTime();
         var i, j = 0;
         var arrayLen = sortedArray.length;
-        var key;
+        var prevSaveTmp;
 
-        for (i = 1; i < arrayLen; i++) {
-            key = sortedArray[i];       // second element
-            j = i - 1;              // previous element
-
-            while (j >= 0 && key < sortedArray[j]) {
-                sortedArray[j + 1] = sortedArray[j]; // second = first
-                j = j - 1;                          // next element
+        for (i = 0; i < arrayLen; i++) {
+            for (j = i; j > 0; j --) {
+                if (sortedArray[j] < sortedArray[j-1]) {
+                    prevSaveTmp = sortedArray[j-1];
+                    sortedArray[j-1] = sortedArray[j]; // prev element = current element
+                    sortedArray[j] = prevSaveTmp;
+                }
             }
-
-            sortedArray[j + 1] = key;  // j = -1  first = second, if while == false -> current_element = current_element
         }
+
         var finishTime = new Date().getTime();
         var timeSpent = finishTime - startedTime;
 

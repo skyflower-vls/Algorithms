@@ -6,6 +6,7 @@ var mergeSortCheckbox;
 var bubbleSortCheckbox;
 var selectionSortCheckbox;
 var startAlgorithmsButton;
+var shellSortCheckbox;
 
 main();
 
@@ -20,6 +21,7 @@ function main() {
     mergeSortCheckbox = document.getElementById("mergeSortCheckbox");
     bubbleSortCheckbox = document.getElementById("bubbleSortCheckbox");
     selectionSortCheckbox = document.getElementById("selectionSortCheckbox");
+    shellSortCheckbox = document.getElementById("shellSortCheckbox");
 }
 
 
@@ -57,6 +59,14 @@ function onStartButtonClicked() {
     } else {
         setEmptyResultsForAlgorithm(ElementIdConst.SelectionSort.SPENT_TIME);
     }
+
+    if (shellSortCheckbox && shellSortCheckbox.checked) {
+        executeAlgorithm(new ShellSort(), dataToSort);
+    } else {
+        setEmptyResultsForAlgorithm(ElementIdConst.SelectionSort.SPENT_TIME);
+    }
+
+
 }
 
 /** @param {function}

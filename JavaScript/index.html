@@ -9,6 +9,7 @@
     <script type="text/javascript" src="src/algorithms/merge_sort.js"></script>
     <script type="text/javascript" src="src/algorithms/bubble_sort.js"></script>
     <script type="text/javascript" src="src/algorithms/selection_sort.js"></script>
+    <script type="text/javascript" src="src/algorithms/shell_sort.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -39,6 +40,11 @@
         </div>
 
         <div class="settingsItemContainer">
+            <div class="settingsItemName"><input type="checkbox" id="shellSortCheckbox" checked="checked">Shell Sort</div>
+            <div class="settingsItemDescription"><span id="spent_time_shell_sort">-</span></div>
+        </div>
+
+        <div class="settingsItemContainer">
             Number of random items: <input type="number" maxlength="5" min="0" id="randomItemsNumberInputType">
             <input id="resultsCheckbox" type="checkbox" checked="true"> Show results
             <button id="startAlgorithms"> START </button>
@@ -50,7 +56,11 @@
     <div class="algorithmDescription">
         <h1>Insertion Sort</h1>
         <p class="description">Efficient for small amount of elements</p>
-        <p class="explanation">Element compare with all previous elements and inserted at the proper position</p>
+        <p class="explanation">Element compare with all previous elements and inserted at the proper position. In iteration i, swap a[i] with each larger entry to its left. Scans from left to right. To maintain algorithm invariants: Move the pointer to the right, Moving from right to left, exchange
+            a[i] with each larger entry to its left, To sort a randomly-ordered array with distinct keys,
+            insertion sort uses ~ ¼ N 2 compares and ~ ¼ N 2 exchanges on average. Expect each entry to move halfway back. Best case. If the array is in ascending order, insertion sort makes
+            N- 1 compares and 0 exchanges. Worst case. If the array is in descending order (and no duplicates),
+            insertion sort makes ~ ½ N 2 compares and ~ ½ N 2 exchanges. An inversion is a pair of keys that are out of order. An array is partially sorted if the number of inversions is ≤ c N. For partially-sorted arrays, insertion sort runs in linear time. Number of exchanges equals the number of inversions</p>
         <p class="time_formula">O(n&sup2;) - for every element (started from the second) is performed compare operation for elements with smaller index</p>
         <p class="type">Type : Algorithm of stable sorting</p>
         <p id="sorted_result_insertion_sort"></p>
@@ -78,10 +88,22 @@
     <div class="algorithmDescription">
         <h1>Selection Sort</h1>
         <p class="description"></p>
-        <p class="explanation">Looks for the smallest element and swap it</p>
+        <p class="explanation">Looks for the smallest element and swap it. In iteration i, find index min of smallest remaining entry.
+            Swap a[i] and a[min]. Scans from left to right. To maintain algorithm invariants: Move the pointer to the right, Identify index of minimum entry on right, Exchange into position. Selection sort uses (N– 1) + (N– 2) + ... + 1 + 0 ~ N 2 / 2 compares
+            and N exchanges. Running time insensitive to input. Quadratic time, even if input is sorted. Data movement is minimal. Linear number of exchanges. </p>
         <p class="time_formula">O(n&sup2;) - begins from the end of a list, Compares two adjacent elements</p>
         <p class="type">Algorithm of unstable sorting</p>
         <p id="sorted_result_selection_sort"></p>
+    </div>
+
+    <div class="algorithmDescription">
+        <h1>Shell Sort</h1>
+        <p class="description"></p>
+        <p class="explanation">Move entries more than one position at a time by h-sorting the array. A g-sorted array remains g-sorted after h-sorting it. The worst-case number of compares used by shellsort with
+            the 3x+1 increments is O(N 3/2). Fast unless array size is huge (used for small subarrays). Tiny, fixed footprint for code (used in some embedded systems). Hardware sort prototype.</p>
+        <p class="time_formula"></p>
+        <p class="type"></p>
+        <p id="sorted_result_shell_sort"></p>
     </div>
 
     <script type="text/javascript" src="./src/main.js"></script>

@@ -7,7 +7,6 @@ var MAX_RANGE    = 100;
 
 var IS_NEED_TO_SHOW_RESULTS = false;
 
-
 var ElementIdConst = {
     InsertionSort : {
         SPENT_TIME      : "spent_time_insertion_sort",
@@ -24,6 +23,9 @@ var ElementIdConst = {
     SelectionSort : {
         SPENT_TIME      : "spent_time_selection_sort",
         SORTED_RESULT   : "sorted_result_selection_sort"
+    },
+    ShellSort : {
+        SPENT_TIME      : "spent_time_shell_sort",
+        SORTED_RESULT   : "sorted_result_shell_sort"
     }
-
 };
