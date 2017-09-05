@@ -63,7 +63,7 @@ function onStartButtonClicked() {
     if (shellSortCheckbox && shellSortCheckbox.checked) {
         executeAlgorithm(new ShellSort(), dataToSort);
     } else {
-        setEmptyResultsForAlgorithm(ElementIdConst.SelectionSort.SPENT_TIME);
+        setEmptyResultsForAlgorithm(ElementIdConst.ShellSort.SPENT_TIME);
     }
 
 
