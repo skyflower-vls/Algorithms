@@ -20,13 +20,9 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-430">
-              <caret line="15" column="65" lean-forward="false" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
-              <folding>
-                <element signature="e#1186#1192#0" expanded="true" />
-                <element signature="e#2367#2373#0" expanded="true" />
-                <element signature="e#2827#2833#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="17" column="65" lean-forward="false" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -34,20 +30,20 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="29" />
+            <state relative-caret-position="1224">
+              <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
               <folding>
-                <element signature="e#0#44#0" expanded="false" />
+                <marker date="1504687234641" expanded="false" signature="0:44" ph="/** Created by viurchuk on 8/10/2017. ...*/" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            <state relative-caret-position="425">
+              <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -60,6 +56,7 @@
               <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
+                <marker date="1504687234641" expanded="true" signature="826:828" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -68,10 +65,21 @@
       <file leaf-file-name="selection_sort.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algorithms/selection_sort.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="986">
               <caret line="60" column="12" lean-forward="false" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="66" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
+                <marker date="1504687234641" expanded="true" signature="87:2066" ph="{...}" />
+                <marker date="1504687234641" expanded="true" signature="262:1147" ph="{...}" />
+                <marker date="1504687234641" expanded="true" signature="533:977" ph="{...}" />
+                <marker date="1504687234641" expanded="true" signature="626:765" ph="{...}" />
+                <marker date="1504687234641" expanded="true" signature="693:751" ph="{...}" />
+                <marker date="1504687234641" expanded="true" signature="803:967" ph="{...}" />
+                <marker date="1504687234641" expanded="true" signature="1171:1314" ph="/**...*/" />
+                <marker date="1504687234641" expanded="true" signature="1353:1405" ph="{...}" />
+                <marker date="1504687234641" expanded="true" signature="1416:1552" ph="/** @param {Object} dataObject ...*/" />
+                <marker date="1504687234641" expanded="true" signature="1596:2057" ph="{...}" />
+                <marker date="1504687234641" expanded="true" signature="1932:2047" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -80,7 +88,7 @@
       <file leaf-file-name="bubble_sort.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algorithms/bubble_sort.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="935">
               <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="63" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
@@ -92,20 +100,28 @@
       <file leaf-file-name="insertion_sort.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/algorithms/insertion_sort.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="53" column="50" lean-forward="false" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+            <state relative-caret-position="850">
+              <caret line="52" column="50" lean-forward="false" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
+                <marker date="1504687234626" expanded="true" signature="78:1906" ph="{...}" />
+                <marker date="1504687234626" expanded="true" signature="253:988" ph="{...}" />
+                <marker date="1504687234626" expanded="true" signature="1002:1904" ph="{...}" />
+                <marker date="1504687234626" expanded="true" signature="1012:1155" ph="/**...*/" />
+                <marker date="1504687234626" expanded="true" signature="1194:1246" ph="{...}" />
+                <marker date="1504687234626" expanded="true" signature="1257:1393" ph="/** @param {Object} dataObject ...*/" />
+                <marker date="1504687234626" expanded="true" signature="1437:1898" ph="{...}" />
+                <marker date="1504687234626" expanded="true" signature="1773:1888" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="merge_sort.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="merge_sort.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/algorithms/merge_sort.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="86" column="46" lean-forward="false" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
+            <state relative-caret-position="17">
+              <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
               <folding>
                 <element signature="n#!!doc;n#MergeSort#0" expanded="false" />
               </folding>
@@ -146,12 +162,13 @@
         <option value="localhost:83/src/main.js" />
         <option value="$PROJECT_DIR$/src/constants/constants.js" />
         <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/src/utils/utils.js" />
         <option value="$PROJECT_DIR$/src/algorithms/selection_sort.js" />
         <option value="$PROJECT_DIR$/src/algorithms/bubble_sort.js" />
-        <option value="$PROJECT_DIR$/src/algorithms/merge_sort.js" />
         <option value="$PROJECT_DIR$/src/algorithms/insertion_sort.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/src/utils/utils.js" />
+        <option value="$PROJECT_DIR$/src/algorithms/merge_sort_bu.js" />
+        <option value="$PROJECT_DIR$/src/algorithms/merge_sort.js" />
       </list>
     </option>
   </component>
@@ -189,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -203,10 +219,17 @@
               <item name="JavaScript" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="JavaScript" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaScript" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithms" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,11 +335,12 @@
       <workItem from="1502350860483" duration="10084000" />
       <workItem from="1504449396976" duration="1597000" />
       <workItem from="1504452279649" duration="4662000" />
+      <workItem from="1504687208501" duration="1636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16343000" />
+    <option name="totallyTimeSpent" value="17979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -324,9 +348,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -337,6 +359,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -352,19 +376,16 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/utils/utils.js</url>
           <line>12</line>
-          <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/algorithms/selection_sort.js</url>
           <line>61</line>
-          <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/algorithms/selection_sort.js</url>
           <line>59</line>
-          <properties />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
@@ -379,12 +400,104 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <caret line="15" column="65" lean-forward="false" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="29" />
           <folding>
-            <element signature="e#1186#1192#0" expanded="true" />
-            <element signature="e#2367#2373#0" expanded="true" />
-            <element signature="e#2827#2833#0" expanded="true" />
+            <marker date="1504687234641" expanded="false" signature="0:44" ph="/** Created by viurchuk on 8/10/2017. ...*/" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="true" signature="826:828" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/selection_sort.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="60" column="12" lean-forward="false" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="true" signature="87:2066" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="262:1147" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="533:977" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="626:765" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="693:751" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="803:967" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1171:1314" ph="/**...*/" />
+            <marker date="1504687234641" expanded="true" signature="1353:1405" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1416:1552" ph="/** @param {Object} dataObject ...*/" />
+            <marker date="1504687234641" expanded="true" signature="1596:2057" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1932:2047" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/bubble_sort.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/insertion_sort.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="53" column="50" lean-forward="false" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234626" expanded="true" signature="78:1906" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="253:988" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1002:1904" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1012:1155" ph="/**...*/" />
+            <marker date="1504687234626" expanded="true" signature="1194:1246" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1257:1393" ph="/** @param {Object} dataObject ...*/" />
+            <marker date="1504687234626" expanded="true" signature="1437:1898" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1773:1888" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/merge_sort.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="86" column="46" lean-forward="false" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc;n#MergeSort#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -402,6 +515,7 @@
           <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="12" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="true" signature="826:828" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -412,6 +526,17 @@
           <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="true" signature="87:2066" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="262:1147" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="533:977" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="626:765" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="693:751" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="803:967" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1171:1314" ph="/**...*/" />
+            <marker date="1504687234641" expanded="true" signature="1353:1405" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1416:1552" ph="/** @param {Object} dataObject ...*/" />
+            <marker date="1504687234641" expanded="true" signature="1596:2057" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1932:2047" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -432,6 +557,14 @@
           <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234626" expanded="true" signature="78:1906" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="253:988" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1002:1904" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1012:1155" ph="/**...*/" />
+            <marker date="1504687234626" expanded="true" signature="1194:1246" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1257:1393" ph="/** @param {Object} dataObject ...*/" />
+            <marker date="1504687234626" expanded="true" signature="1437:1898" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1773:1888" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -451,7 +584,7 @@
         <state relative-caret-position="765">
           <caret line="47" column="8" lean-forward="false" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
           <folding>
-            <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="false" signature="0:44" ph="/** Created by viurchuk on 8/10/2017. ...*/" />
           </folding>
         </state>
       </provider>
@@ -460,11 +593,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="72" lean-forward="false" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
-          <folding>
-            <element signature="e#1186#1192#0" expanded="true" />
-            <element signature="e#2367#2373#0" expanded="true" />
-            <element signature="e#2827#2833#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -473,7 +602,7 @@
         <state relative-caret-position="255">
           <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
           <folding>
-            <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="false" signature="0:44" ph="/** Created by viurchuk on 8/10/2017. ...*/" />
           </folding>
         </state>
       </provider>
@@ -492,6 +621,17 @@
           <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="true" signature="87:2066" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="262:1147" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="533:977" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="626:765" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="693:751" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="803:967" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1171:1314" ph="/**...*/" />
+            <marker date="1504687234641" expanded="true" signature="1353:1405" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1416:1552" ph="/** @param {Object} dataObject ...*/" />
+            <marker date="1504687234641" expanded="true" signature="1596:2057" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1932:2047" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -512,6 +652,14 @@
           <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234626" expanded="true" signature="78:1906" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="253:988" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1002:1904" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1012:1155" ph="/**...*/" />
+            <marker date="1504687234626" expanded="true" signature="1194:1246" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1257:1393" ph="/** @param {Object} dataObject ...*/" />
+            <marker date="1504687234626" expanded="true" signature="1437:1898" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1773:1888" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -532,6 +680,7 @@
           <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="true" signature="826:828" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -548,23 +697,35 @@
           <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="true" signature="826:828" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithms/selection_sort.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
+        <state relative-caret-position="986">
           <caret line="60" column="12" lean-forward="false" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="66" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="true" signature="87:2066" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="262:1147" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="533:977" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="626:765" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="693:751" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="803:967" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1171:1314" ph="/**...*/" />
+            <marker date="1504687234641" expanded="true" signature="1353:1405" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1416:1552" ph="/** @param {Object} dataObject ...*/" />
+            <marker date="1504687234641" expanded="true" signature="1596:2057" ph="{...}" />
+            <marker date="1504687234641" expanded="true" signature="1932:2047" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithms/bubble_sort.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="935">
           <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="63" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
@@ -572,53 +733,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/algorithms/merge_sort.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="86" column="46" lean-forward="false" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
-          <folding>
-            <element signature="n#!!doc;n#MergeSort#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/algorithms/insertion_sort.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="53" column="50" lean-forward="false" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+        <state relative-caret-position="850">
+          <caret line="52" column="50" lean-forward="false" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-430">
-          <caret line="15" column="65" lean-forward="false" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
-          <folding>
-            <element signature="e#1186#1192#0" expanded="true" />
-            <element signature="e#2367#2373#0" expanded="true" />
-            <element signature="e#2827#2833#0" expanded="true" />
+            <marker date="1504687234626" expanded="true" signature="78:1906" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="253:988" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1002:1904" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1012:1155" ph="/**...*/" />
+            <marker date="1504687234626" expanded="true" signature="1194:1246" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1257:1393" ph="/** @param {Object} dataObject ...*/" />
+            <marker date="1504687234626" expanded="true" signature="1437:1898" ph="{...}" />
+            <marker date="1504687234626" expanded="true" signature="1773:1888" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="29" />
+        <state relative-caret-position="1224">
+          <caret line="84" column="4" lean-forward="false" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
           <folding>
-            <element signature="e#0#44#0" expanded="false" />
+            <marker date="1504687234641" expanded="false" signature="0:44" ph="/** Created by viurchuk on 8/10/2017. ...*/" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+        <state relative-caret-position="425">
+          <caret line="27" column="24" lean-forward="false" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/merge_sort_bu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="17" column="65" lean-forward="false" selection-start-line="17" selection-start-column="65" selection-end-line="17" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/algorithms/merge_sort.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc;n#MergeSort#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

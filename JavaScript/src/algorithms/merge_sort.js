@@ -13,7 +13,7 @@ function MergeSort() {
 
         var startedTime = new Date().getTime();
 
-        var result = divideArray(sortedArray);
+        var result = mergeSort(sortedArray);
 
         var finishTime = new Date().getTime();
         var timeSpent = finishTime - startedTime;
@@ -22,46 +22,36 @@ function MergeSort() {
     };
 
     /**  @param {Array.<Number>} **/
-    function divideArray(array) {
-        if (array.length < 2)  return array; // one element has been already sorted
+    function mergeSort(array) {
+        if (array.length < 2)
+            return array;
 
-        var halfLen = array.length / 2;
-        var leftPartOfArray = array.slice(0, halfLen);
-        var rightPartOfArray = array.slice(halfLen, array.length);
+        var middle = parseInt(array.length / 2);
+        var left   = array.slice(0, middle);
+        var right  = array.slice(middle, array.length);
 
-        var valueFromLeftPartArray = divideArray(leftPartOfArray);
-        var valueFromRightPartArray = divideArray(rightPartOfArray);
-
-        // divide till one element
-        // compare all elements from two parts
-        return compare(valueFromLeftPartArray, valueFromRightPartArray);
+        return merge(mergeSort(left), mergeSort(right));
     }
 
     /**  @param {Array.<Number>}
      *   @param {Array.<Number>}
      * **/
-    function compare(arrayLeft, arrayRight) {
+    function merge(arrayLeft, arrayRight) {
         var result = [];
 
-        while(arrayLeft.length || arrayRight.length) {
-            if (arrayLeft[0] && arrayRight[0]) {
-                if (arrayLeft[0] > arrayRight[0]) {
-                    result.push(arrayRight[0]);
-                    arrayRight.shift();
-                } else {
-                    result.push(arrayLeft[0]);
-                    arrayLeft.shift();
-                }
-            }
-            else if (arrayLeft[0]) {
-                result.push(arrayLeft[0]);
-                arrayLeft.shift();
-            }
-            else if (arrayRight[0]) {
-                result.push(arrayRight[0]);
-                arrayRight.shift();
+        while (arrayLeft.length && arrayRight.length) {
+            if (arrayLeft[0] <= arrayRight[0]) {
+                result.push(arrayLeft.shift());
+            } else {
+                result.push(arrayRight.shift());
             }
         }
+
+        while (arrayLeft.length)
+            result.push(arrayLeft.shift());
+
+        while (arrayLeft.length)
+            result.push(arrayRight.shift());
 
         return result;
     }
