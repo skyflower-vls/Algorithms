@@ -30,7 +30,8 @@ function MergeSort() {
         var left   = array.slice(0, middle);
         var right  = array.slice(middle, array.length);
 
-        return merge(mergeSort(left), mergeSort(right));
+        var result =  merge(mergeSort(left), mergeSort(right));
+        return result;
     }
 
     /**  @param {Array.<Number>}
@@ -50,7 +51,7 @@ function MergeSort() {
         while (arrayLeft.length)
             result.push(arrayLeft.shift());
 
-        while (arrayLeft.length)
+        while (arrayRight.length)
             result.push(arrayRight.shift());
 
         return result;

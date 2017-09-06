@@ -27,5 +27,9 @@ var ElementIdConst = {
     ShellSort : {
         SPENT_TIME      : "spent_time_shell_sort",
         SORTED_RESULT   : "sorted_result_shell_sort"
+    },
+    QuickSort : {
+        SPENT_TIME      : "spent_time_quick_sort",
+        SORTED_RESULT   : "sorted_result_quick_sort"
     }
 };

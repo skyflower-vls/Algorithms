@@ -10,6 +10,7 @@
     <script type="text/javascript" src="src/algorithms/bubble_sort.js"></script>
     <script type="text/javascript" src="src/algorithms/selection_sort.js"></script>
     <script type="text/javascript" src="src/algorithms/shell_sort.js"></script>
+    <script type="text/javascript" src="src/algorithms/quicksort.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -20,28 +21,33 @@
          </div>
 
         <div class="settingsItemContainer">
-            <div class="settingsItemName"><input type="checkbox" id="insertionSortCheckbox" checked="checked">Insertion Sort</div>
+            <div class="settingsItemName"><input type="checkbox" id="insertionSortCheckbox" checked>Insertion Sort</div>
             <div class="settingsItemDescription"><span id="spent_time_insertion_sort">-</span></div>
         </div>
 
         <div class="settingsItemContainer">
-            <div class="settingsItemName"><input type="checkbox" id="mergeSortCheckbox" checked="checked" >Merge Sort</div>
+            <div class="settingsItemName"><input type="checkbox" id="mergeSortCheckbox" checked >Merge Sort</div>
             <div class="settingsItemDescription"><span id="spent_time_merge_sort">-</span></div>
         </div>
 
         <div class="settingsItemContainer">
-            <div class="settingsItemName"><input type="checkbox" id="bubbleSortCheckbox" checked="checked">Bubble Sort</div>
+            <div class="settingsItemName"><input type="checkbox" id="bubbleSortCheckbox" checked>Bubble Sort</div>
             <div class="settingsItemDescription"><span id="spent_time_bubble_sort">-</span></div>
         </div>
 
         <div class="settingsItemContainer">
-            <div class="settingsItemName"><input type="checkbox" id="selectionSortCheckbox" checked="checked">Selection Sort</div>
+            <div class="settingsItemName"><input type="checkbox" id="selectionSortCheckbox" checked>Selection Sort</div>
             <div class="settingsItemDescription"><span id="spent_time_selection_sort">-</span></div>
         </div>
 
         <div class="settingsItemContainer">
-            <div class="settingsItemName"><input type="checkbox" id="shellSortCheckbox" checked="checked">Shell Sort</div>
+            <div class="settingsItemName"><input type="checkbox" id="shellSortCheckbox" checked>Shell Sort</div>
             <div class="settingsItemDescription"><span id="spent_time_shell_sort">-</span></div>
+        </div>
+
+        <div class="settingsItemContainer">
+            <div class="settingsItemName"><input type="checkbox" id="quickSortCheckbox" checked>Quick Sort</div>
+            <div class="settingsItemDescription"><span id="spent_time_quick_sort">-</span></div>
         </div>
 
         <div class="settingsItemContainer">
@@ -62,7 +68,7 @@
             N- 1 compares and 0 exchanges. Worst case. If the array is in descending order (and no duplicates),
             insertion sort makes ~ ½ N 2 compares and ~ ½ N 2 exchanges. An inversion is a pair of keys that are out of order. An array is partially sorted if the number of inversions is ≤ c N. For partially-sorted arrays, insertion sort runs in linear time. Number of exchanges equals the number of inversions</p>
         <p class="time_formula">O(n&sup2;) - for every element (started from the second) is performed compare operation for elements with smaller index</p>
-        <p class="type">Type : Algorithm of stable sorting</p>
+        <p class="type">Type : Algorithm of stable sorting (equal items never move past each other</p>
         <p id="sorted_result_insertion_sort"></p>
     </div>
 
@@ -92,7 +98,7 @@
             Swap a[i] and a[min]. Scans from left to right. To maintain algorithm invariants: Move the pointer to the right, Identify index of minimum entry on right, Exchange into position. Selection sort uses (N– 1) + (N– 2) + ... + 1 + 0 ~ N 2 / 2 compares
             and N exchanges. Running time insensitive to input. Quadratic time, even if input is sorted. Data movement is minimal. Linear number of exchanges. </p>
         <p class="time_formula">O(n&sup2;) - begins from the end of a list, Compares two adjacent elements</p>
-        <p class="type">Algorithm of unstable sorting</p>
+        <p class="type">Algorithm of unstable sorting - Long-distance exchange might move an item past some equal item </p>
         <p id="sorted_result_selection_sort"></p>
     </div>
 
@@ -102,8 +108,17 @@
         <p class="explanation">Like an Insertion Sort, only the step is H steps back, then less till 1. (Insertion sort - step is 1 back).Move entries more than one position at a time by h-sorting the array. A g-sorted array remains g-sorted after h-sorting it. The worst-case number of compares used by shellsort with
             the 3x+1 increments is O(N 3/2). Fast unless array size is huge (used for small subarrays). Tiny, fixed footprint for code (used in some embedded systems). Hardware sort prototype.</p>
         <p class="time_formula"></p>
-        <p class="type"></p>
+        <p class="type">Algorithm of unstable sorting</p>
         <p id="sorted_result_shell_sort"></p>
+    </div>
+
+    <div class="algorithmDescription">
+        <h1>Quick Sort</h1>
+        <p class="description">Doesn't use extra space like Merge sort</p>
+        <p class="explanation"></p>
+        <p class="time_formula"></p>
+        <p class="type">Algorithm of unstable sorting</p>
+        <p id="sorted_result_quick_sort"></p>
     </div>
 
     <script type="text/javascript" src="./src/main.js"></script>
