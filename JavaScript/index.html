@@ -11,6 +11,7 @@
     <script type="text/javascript" src="src/algorithms/selection_sort.js"></script>
     <script type="text/javascript" src="src/algorithms/shell_sort.js"></script>
     <script type="text/javascript" src="src/algorithms/quicksort.js"></script>
+    <script type="text/javascript" src="src/algorithms/quick_sort_3_way.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -48,6 +49,11 @@
         <div class="settingsItemContainer">
             <div class="settingsItemName"><input type="checkbox" id="quickSortCheckbox" checked>Quick Sort</div>
             <div class="settingsItemDescription"><span id="spent_time_quick_sort">-</span></div>
+        </div>
+
+        <div class="settingsItemContainer">
+            <div class="settingsItemName"><input type="checkbox" id="quickSort3WayCheckbox" checked>3 Way Quick Sort</div>
+            <div class="settingsItemDescription"><span id="spent_time_3_way_quick_sort">-</span></div>
         </div>
 
         <div class="settingsItemContainer">
@@ -114,11 +120,20 @@
 
     <div class="algorithmDescription">
         <h1>Quick Sort</h1>
-        <p class="description">Doesn't use extra space like Merge sort</p>
+        <p class="description">Doesn't use extra space like Merge sort. Can take quadratic time when array is full of duplicated keys</p>
         <p class="explanation"></p>
         <p class="time_formula"></p>
         <p class="type">Algorithm of unstable sorting</p>
         <p id="sorted_result_quick_sort"></p>
+    </div>
+
+    <div class="algorithmDescription">
+        <h1>3 way Quick Sort</h1>
+        <p class="description">Deal with duplicated keys. The goal of 3-way partitioning is to speed up quicksort in the presence of duplicate keys.</p>
+        <p class="explanation"></p>
+        <p class="time_formula"></p>
+        <p class="type">Algorithm of unstable sorting</p>
+        <p id="sorted_result_3_way_quick_sort"></p>
     </div>
 
     <script type="text/javascript" src="./src/main.js"></script>

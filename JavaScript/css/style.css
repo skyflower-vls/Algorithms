@@ -1,5 +1,5 @@
 .settingsContainer {
-    width: 40%;
+    width: 100%;
     overflow: auto;
 }
 
@@ -10,12 +10,12 @@
 }
 
 .settingsItemName {
-    width: 25%;
+    width: 20%;
     float: left;
 }
 
 .settingsItemDescription {
-    width: 75%;
+    width: 80%;
     float: right;
 }
 

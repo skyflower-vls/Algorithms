@@ -8,6 +8,7 @@ var selectionSortCheckbox;
 var startAlgorithmsButton;
 var shellSortCheckbox;
 var quickSortCheckbox;
+var quickSort3WayCheckbox;
 
 main();
 
@@ -24,6 +25,7 @@ function main() {
     selectionSortCheckbox = document.getElementById("selectionSortCheckbox");
     shellSortCheckbox = document.getElementById("shellSortCheckbox");
     quickSortCheckbox = document.getElementById("quickSortCheckbox");
+    quickSort3WayCheckbox = document.getElementById("quickSort3WayCheckbox");
 }
 
 
@@ -74,7 +76,12 @@ function onStartButtonClicked() {
         setEmptyResultsForAlgorithm(ElementIdConst.QuickSort.SPENT_TIME);
     }
 
-
+    if (quickSort3WayCheckbox && quickSort3WayCheckbox.checked) {
+        executeAlgorithm(new QuickSort3Way(), dataToSort);
+        console.log("quickSort3WayCheckbox");
+    } else {
+        setEmptyResultsForAlgorithm(ElementIdConst.QuickSort3Way.SPENT_TIME);
+    }
 }
 
 /** @param {function}

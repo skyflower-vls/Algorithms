@@ -31,5 +31,10 @@ var ElementIdConst = {
     QuickSort : {
         SPENT_TIME      : "spent_time_quick_sort",
         SORTED_RESULT   : "sorted_result_quick_sort"
-    }
+    },
+    QuickSort3Way : {
+        SPENT_TIME      : "spent_time_3_way_quick_sort",
+        SORTED_RESULT   : "sorted_result_3_way_quick_sort"
+    },
+    
 };
