@@ -11,3 +11,6 @@ Will be added
 * Quick Find
 * Quick Union
 * Union Find
+
+Link:
+https://skyflower-vls.github.io/Algorithms/
