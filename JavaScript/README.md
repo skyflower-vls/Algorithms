@@ -2,7 +2,7 @@
 Javascript : Sorting and Searching algorithms 
 
 Algorithms:
-* Mefre Sort 
+* Merge Sort 
 * Bubble sort
 * Insertion sort 
 * Selection sort
