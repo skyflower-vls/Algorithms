@@ -13,4 +13,4 @@ Will be added
 * Union Find
 
 Link:
-https://skyflower-vls.github.io/Algorithms/
+https://skyflower-vls.github.io/Algorithms/JavaScript/
